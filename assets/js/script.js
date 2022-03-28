@@ -52,131 +52,122 @@ $("#textarea3pm").val(JSON.parse(localStorage.getItem("content3pm")));
 $("#textarea4pm").val(JSON.parse(localStorage.getItem("content4pm")));
 $("#textarea5pm").val(JSON.parse(localStorage.getItem("content5pm")));
 
-var currentTime = moment().format("LT");
+var displayTime = moment().format("LT");
+var currentTime = moment().hours();
 
-console.log(currentTime)
-var timeslot9am = new Date();
+timeslot9am = new Date();
 timeslot9am.setHours(9, 0, 0)
 $("#9am").text(moment(timeslot9am).format("LT"))
-if (currentTime > moment(timeslot9am).format("LT")) {
+if (currentTime < 9) {
     $("#textarea9am").addClass("future");
-    console.log("Future")
-    console.log(timeslot9am)
+}
+else if (currentTime === 9) {
+    $("#textarea9am").addClass("present");
 }
 else {
     $("#textarea9am").addClass("past");
-    console.log("Past")
-    console.log(timeslot9am)
 }
 
 var timeslot10am = new Date();
 timeslot10am.setHours(10, 0, 0)
 $("#10am").text(moment(timeslot10am).format("LT"))
-if (currentTime < moment(timeslot10am).format("LT")) {
+if (currentTime < 10) {
     $("#textarea10am").addClass("future");
-    console.log("Future")
-    console.log(timeslot10am)
+}
+else if (currentTime === 10) {
+    $("#textarea10am").addClass("present");
 }
 else {
     $("#textarea10am").addClass("past");
-    console.log("Past")
-    console.log(timeslot10am)
 }
 
 var timeslot11am = new Date();
 timeslot11am.setHours(11, 0, 0)
 $("#11am").text(moment(timeslot11am).format("LT"))
-if (currentTime <= moment(timeslot11am).format("LT")) {
+if (currentTime < 11) {
     $("#textarea11am").addClass("future");
-    console.log("Future")
-    console.log(timeslot11am)
+}
+else if (currentTime === 11) {
+    $("#textarea11am").addClass("present");
 }
 else {
     $("#textarea11am").addClass("past");
-    console.log("Past")
-    console.log(timeslot11am)
 }
 
 var timeslot12pm = new Date();
 timeslot12pm.setHours(12, 0, 0)
 $("#12pm").text(moment(timeslot12pm).format("LT"))
-if (currentTime <= moment(timeslot12pm).format("LT")) {
-    $("#textarea12pm").addClass("future"); 
-    console.log("Future")
-    console.log(timeslot12pm)
+if (currentTime < 12) {
+    $("#textarea12pm").addClass("future");
+}
+else if (currentTime === 12) {
+    $("#textarea12pm").addClass("present");
 }
 else {
     $("#textarea12pm").addClass("past");
-    console.log("Past")
-    console.log(timeslot12pm)
 }
 
 var timeslot1pm = new Date();
 timeslot1pm.setHours(13, 0, 0)
 $("#1pm").text(moment(timeslot1pm).format("LT"))
-if (currentTime <= moment(timeslot1pm).format("LT")) {
-    $("#textarea1pm").addClass("future"); 
-    console.log("Future")
-    console.log(timeslot1pm)
+if (currentTime < 13) {
+    $("#textarea1pm").addClass("future");
+}
+else if (currentTime === 13) {
+    $("#textarea1pm").addClass("present");
 }
 else {
     $("#textarea1pm").addClass("past");
-    console.log("Past")
-    console.log(timeslot1pm)
 }
 
 var timeslot2pm = new Date();
 timeslot2pm.setHours(14, 0, 0)
 $("#2pm").text(moment(timeslot2pm).format("LT"))
-if (currentTime <= moment(timeslot2pm).format("LT")) {
+if (currentTime < 14) {
     $("#textarea2pm").addClass("future");
-    console.log("Future")
-    console.log(timeslot2pm)
+}
+else if (currentTime === 14) {
+    $("#textarea2pm").addClass("present");
 }
 else {
     $("#textarea2pm").addClass("past");
-    console.log("Past")
-    console.log(timeslot2pm)
 }
 
 var timeslot3pm = new Date();
 timeslot3pm.setHours(15, 0, 0)
 $("#3pm").text(moment(timeslot3pm).format("LT"))
-if (currentTime <= moment(timeslot3pm).format("LT")) {
+if (currentTime < 15) {
     $("#textarea3pm").addClass("future");
-    console.log("Future")
-    console.log(timeslot3pm)
+}
+else if (currentTime === 15) {
+    $("#textarea3pm").addClass("present");
 }
 else {
     $("#textarea3pm").addClass("past");
-    console.log("Past")
-    console.log(timeslot3pm)
 }
 
 var timeslot4pm = new Date();
 timeslot4pm.setHours(16, 0, 0)
 $("#4pm").text(moment(timeslot4pm).format("LT"))
-if (currentTime <= moment(timeslot4pm).format("LT")) {
+if (currentTime < 16) {
     $("#textarea4pm").addClass("future");
-    console.log("Future")
-    console.log(timeslot4pm)
+}
+else if (currentTime === 16) {
+    $("#textarea4pm").addClass("present");
 }
 else {
     $("#textarea4pm").addClass("past");
-    console.log("Past")
-    console.log(timeslot4pm)
 }
 
 var timeslot5pm = new Date();
 timeslot5pm.setHours(17, 0, 0)
 $("#5pm").text(moment(timeslot5pm).format("LT"))
-if (currentTime <= moment(timeslot5pm).format("LT")) {
+if (currentTime < 17) {
     $("#textarea5pm").addClass("future"); 
-    console.log("Future")
-    console.log(timeslot5pm)
+}
+else if (currentTime === 17) {
+    $("#textarea5pm").addClass("present"); 
 }
 else {
     $("#textarea5pm").addClass("past");
-    console.log("Past")
-    console.log(timeslot5pm)
 }
