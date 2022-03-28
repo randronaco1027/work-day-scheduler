@@ -54,6 +54,7 @@ $("#textarea5pm").val(JSON.parse(localStorage.getItem("content5pm")));
 
 var currentTime = moment().format("LT");
 
+console.log(currentTime)
 var timeslot9am = new Date();
 timeslot9am.setHours(9, 0, 0)
 $("#9am").text(moment(timeslot9am).format("LT"))
