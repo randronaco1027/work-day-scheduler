@@ -4,183 +4,178 @@ $("#clearTasks").click(function () {
     localStorage.clear()
 })
 
-$("#saveBtn1").click(function () {
-    var content1 = $.trim($("#textarea1").val())
-    localStorage.setItem("content1", JSON.stringify(content1));
+$("#saveBtn9am").click(function () {
+    var content1 = $.trim($("#textarea9am").val())
+    localStorage.setItem("content9am", JSON.stringify(content1));
 });
-$("#saveBtn2").click(function () {
-    var content2 = $.trim($("#textarea2").val())
-    localStorage.setItem("content2", JSON.stringify(content2));
+$("#saveBtn10am").click(function () {
+    var content2 = $.trim($("#textarea10am").val())
+    localStorage.setItem("content10am", JSON.stringify(content2));
 });
-$("#saveBtn3").click(function () {
-    var content3 = $.trim($("#textarea3").val())
-    localStorage.setItem("content3", JSON.stringify(content3));
+$("#saveBtn11am").click(function () {
+    var content3 = $.trim($("#textarea11am").val())
+    localStorage.setItem("content11am", JSON.stringify(content3));
 });
-$("#saveBtn4").click(function () {
-    var content4 = $.trim($("#textarea4").val())
-    localStorage.setItem("content4", JSON.stringify(content4));
+$("#saveBtn12pm").click(function () {
+    var content4 = $.trim($("#textarea12pm").val())
+    localStorage.setItem("content12pm", JSON.stringify(content4));
 });
-$("#saveBtn5").click(function () {
-    var content5 = $.trim($("#textarea5").val())
-    localStorage.setItem("content5", JSON.stringify(content5));
+$("#saveBtn1pm").click(function () {
+    var content5 = $.trim($("#textarea1pm").val())
+    localStorage.setItem("content1pm", JSON.stringify(content5));
 });
-$("#saveBtn6").click(function () {
-    var content6 = $.trim($("#textarea6").val())
-    localStorage.setItem("content6", JSON.stringify(content6));
+$("#saveBtn2pm").click(function () {
+    var content6 = $.trim($("#textarea2pm").val())
+    localStorage.setItem("content2pm", JSON.stringify(content6));
 });
-$("#saveBtn7").click(function () {
-    var content7 = $.trim($("#textarea7").val())
-    localStorage.setItem("content7", JSON.stringify(content7));
+$("#saveBtn3pm").click(function () {
+    var content7 = $.trim($("#textarea3pm").val())
+    localStorage.setItem("content3pm", JSON.stringify(content7));
 });
-$("#saveBtn8").click(function () {
-    var content8 = $.trim($("#textarea8").val())
-    localStorage.setItem("content8", JSON.stringify(content8));
+$("#saveBtn4pm").click(function () {
+    var content8 = $.trim($("#textarea4pm").val())
+    localStorage.setItem("content4pm", JSON.stringify(content8));
 });
-$("#saveBtn9").click(function () {
-    var content9 = $.trim($("#textarea9").val())
-    localStorage.setItem("content9", JSON.stringify(content9));
+$("#saveBtn5pm").click(function () {
+    var content9 = $.trim($("#textarea5pm").val())
+    localStorage.setItem("content5pm", JSON.stringify(content9));
 });
 
 
-$("#textarea1").val(localStorage.getItem("content1"));
-$("#textarea2").val(localStorage.getItem("content2"));
-$("#textarea3").val(localStorage.getItem("content3"));
-$("#textarea4").val(localStorage.getItem("content4"));
-$("#textarea5").val(localStorage.getItem("content5"));
-$("#textarea6").val(localStorage.getItem("content6"));
-$("#textarea7").val(localStorage.getItem("content7"));
-$("#textarea8").val(localStorage.getItem("content8"));
-$("#textarea9").val(localStorage.getItem("content9"));
+$("#textarea9am").val(JSON.parse(localStorage.getItem("content9am")));
+$("#textarea10am").val(JSON.parse(localStorage.getItem("content10am")));
+$("#textarea11am").val(JSON.parse(localStorage.getItem("content11am")));
+$("#textarea12pm").val(JSON.parse(localStorage.getItem("content12pm")));
+$("#textarea1pm").val(JSON.parse(localStorage.getItem("content1pm")));
+$("#textarea2pm").val(JSON.parse(localStorage.getItem("content2pm")));
+$("#textarea3pm").val(JSON.parse(localStorage.getItem("content3pm")));
+$("#textarea4pm").val(JSON.parse(localStorage.getItem("content4pm")));
+$("#textarea5pm").val(JSON.parse(localStorage.getItem("content5pm")));
 
 var currentTime = moment().format("LT");
 
-var timeslot1 = new Date();
-timeslot1.setHours(9, 0, 0)
-$("#9am").text(moment(timeslot1).format("LT"))
-if (currentTime >= moment(timeslot1).format("LT")) {
-    console.log("Past")
-    console.log(timeslot1)
+var timeslot9am = new Date();
+timeslot9am.setHours(9, 0, 0)
+$("#9am").text(moment(timeslot9am).format("LT"))
+if (currentTime > moment(timeslot9am).format("LT")) {
+    $("#textarea9am").addClass("future");
+    console.log("Future")
+    console.log(timeslot9am)
 }
 else {
-    $("#textarea1").removeClass("future");
-    $("#textarea1").addClass("past");
-    console.log("Future")
-    console.log(timeslot1)
+    $("#textarea9am").addClass("past");
+    console.log("Past")
+    console.log(timeslot9am)
 }
 
-var timeslot2 = new Date();
-timeslot2.setHours(10, 0, 0)
-$("#10am").text(moment(timeslot2).format("LT"))
-if (currentTime <= moment(timeslot2).format("LT")) {
-    console.log("Past")
-    console.log(timeslot2)
+var timeslot10am = new Date();
+timeslot10am.setHours(10, 0, 0)
+$("#10am").text(moment(timeslot10am).format("LT"))
+if (currentTime < moment(timeslot10am).format("LT")) {
+    $("#textarea10am").addClass("future");
+    console.log("Future")
+    console.log(timeslot10am)
 }
 else {
-    $("#textarea2").removeClass("future");
-    $("#textarea2").addClass("past");
-    console.log("Future")
-    console.log(timeslot2)
+    $("#textarea10am").addClass("past");
+    console.log("Past")
+    console.log(timeslot10am)
 }
 
-var timeslot3 = new Date();
-timeslot3.setHours(11, 0, 0)
-$("#11am").text(moment(timeslot3).format("LT"))
-if (currentTime <= moment(timeslot3).format("LT")) {
-    console.log("Past")
-    console.log(timeslot3)
+var timeslot11am = new Date();
+timeslot11am.setHours(11, 0, 0)
+$("#11am").text(moment(timeslot11am).format("LT"))
+if (currentTime <= moment(timeslot11am).format("LT")) {
+    $("#textarea11am").addClass("future");
+    console.log("Future")
+    console.log(timeslot11am)
 }
 else {
-    $("#textarea3").removeClass("future");
-    $("#textarea3").addClass("past");
-    console.log("Future")
-    console.log(timeslot3)
+    $("#textarea11am").addClass("past");
+    console.log("Past")
+    console.log(timeslot11am)
 }
 
-var timeslot4 = new Date();
-timeslot4.setHours(12, 0, 0)
-$("#12pm").text(moment(timeslot4).format("LT"))
-if (currentTime <= moment(timeslot4).format("LT")) {
-    console.log("Past")
-    console.log(timeslot4)
+var timeslot12pm = new Date();
+timeslot12pm.setHours(12, 0, 0)
+$("#12pm").text(moment(timeslot12pm).format("LT"))
+if (currentTime <= moment(timeslot12pm).format("LT")) {
+    $("#textarea12pm").addClass("future"); 
+    console.log("Future")
+    console.log(timeslot12pm)
 }
 else {
-    $("#textarea4").removeClass("future");
-    $("#textarea4").addClass("past");
-    console.log("Future")
-    console.log(timeslot4)
+    $("#textarea12pm").addClass("past");
+    console.log("Past")
+    console.log(timeslot12pm)
 }
 
-var timeslot5 = new Date();
-timeslot5.setHours(13, 0, 0)
-$("#1pm").text(moment(timeslot5).format("LT"))
-if (currentTime <= moment(timeslot5).format("LT")) {
-    console.log("Past")
-    console.log(timeslot5)
+var timeslot1pm = new Date();
+timeslot1pm.setHours(13, 0, 0)
+$("#1pm").text(moment(timeslot1pm).format("LT"))
+if (currentTime <= moment(timeslot1pm).format("LT")) {
+    $("#textarea1pm").addClass("future"); 
+    console.log("Future")
+    console.log(timeslot1pm)
 }
 else {
-    $("#textarea5").removeClass("future");
-    $("#textarea5").addClass("past");
-    console.log("Future")
-    console.log(timeslot5)
+    $("#textarea1pm").addClass("past");
+    console.log("Past")
+    console.log(timeslot1pm)
 }
 
-var timeslot6 = new Date();
-timeslot6.setHours(14, 0, 0)
-$("#2pm").text(moment(timeslot6).format("LT"))
-if (currentTime <= moment(timeslot6).format("LT")) {
-    console.log("Past")
-    console.log(timeslot6)
+var timeslot2pm = new Date();
+timeslot2pm.setHours(14, 0, 0)
+$("#2pm").text(moment(timeslot2pm).format("LT"))
+if (currentTime <= moment(timeslot2pm).format("LT")) {
+    $("#textarea2pm").addClass("future");
+    console.log("Future")
+    console.log(timeslot2pm)
 }
 else {
-    $("#textarea6").removeClass("future");
-    $("#textarea6").addClass("past");
-    console.log("Future")
-    console.log(timeslot6)
+    $("#textarea2pm").addClass("past");
+    console.log("Past")
+    console.log(timeslot2pm)
 }
 
-var timeslot7 = new Date();
-timeslot7.setHours(15, 0, 0)
-$("#3pm").text(moment(timeslot7).format("LT"))
-if (currentTime <= moment(timeslot7).format("LT")) {
-    console.log("Past")
-    console.log(timeslot7)
+var timeslot3pm = new Date();
+timeslot3pm.setHours(15, 0, 0)
+$("#3pm").text(moment(timeslot3pm).format("LT"))
+if (currentTime <= moment(timeslot3pm).format("LT")) {
+    $("#textarea3pm").addClass("future");
+    console.log("Future")
+    console.log(timeslot3pm)
 }
 else {
-    $("#textarea7").removeClass("future");
-    $("#textarea7").addClass("past");
-    console.log("Future")
-    console.log(timeslot7)
+    $("#textarea3pm").addClass("past");
+    console.log("Past")
+    console.log(timeslot3pm)
 }
 
-var timeslot8 = new Date();
-timeslot8.setHours(16, 0, 0)
-$("#4pm").text(moment(timeslot8).format("LT"))
-if (currentTime <= moment(timeslot8).format("LT")) {
-    console.log("Past")
-    console.log(timeslot8)
+var timeslot4pm = new Date();
+timeslot4pm.setHours(16, 0, 0)
+$("#4pm").text(moment(timeslot4pm).format("LT"))
+if (currentTime <= moment(timeslot4pm).format("LT")) {
+    $("#textarea4pm").addClass("future");
+    console.log("Future")
+    console.log(timeslot4pm)
 }
 else {
-    $("#textarea8").removeClass("future");
-    $("#textarea8").addClass("past");
-    console.log("Future")
-    console.log(timeslot8)
+    $("#textarea4pm").addClass("past");
+    console.log("Past")
+    console.log(timeslot4pm)
 }
 
-var timeslot9 = new Date();
-timeslot9.setHours(17, 0, 0)
-$("#5pm").text(moment(timeslot9).format("LT"))
-if (currentTime <= moment(timeslot9).format("LT")) {
-    console.log("Past")
-    console.log(timeslot9)
+var timeslot5pm = new Date();
+timeslot5pm.setHours(17, 0, 0)
+$("#5pm").text(moment(timeslot5pm).format("LT"))
+if (currentTime <= moment(timeslot5pm).format("LT")) {
+    $("#textarea5pm").addClass("future"); 
+    console.log("Future")
+    console.log(timeslot5pm)
 }
 else {
-    $("#textarea9").removeClass("future");
-    $("#textarea9").addClass("past");
-    console.log("Future")
-    console.log(timeslot9)
+    $("#textarea5pm").addClass("past");
+    console.log("Past")
+    console.log(timeslot5pm)
 }
-
-console.log(moment(parseInt(currentTime)).subtract(2, "hours"))
-console.log(Math.abs(currentTime - 1))
-console.log(moment(timeslot9 - parseInt(currentTime)).format("LT"))
-console.log(insertDecimal(parseInt(currentTime) - 1))
