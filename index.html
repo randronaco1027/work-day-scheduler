@@ -19,6 +19,7 @@
         <h1 class="display-3">Work Day Scheduler</h1>
         <p class="lead">A simple calendar app for scheduling your work day</p>
         <p id="currentDay" class=" time-block"></p>
+        <!-- Added buttons to clear all tasks or just the unsaved ones -->
         <button id="clearTasks" onclick="window.location.reload();" class="clearBtn btn btn-primary">Clear All Tasks</button>
         <button id="clearUnsaved" onclick="window.location.reload();" class="clearBtn btn btn-primary">Clear Unsaved Tasks</button>
     </header>
@@ -74,7 +75,6 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

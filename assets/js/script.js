@@ -1,9 +1,12 @@
+// Set header to have current date and time
 $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'))
 
+// Clear local storage, this removes saved and unsaved tasks
 $("#clearTasks").click(function () {
     localStorage.clear()
 })
 
+// Save tasks for each timeslot to local storage
 $("#saveBtn9am").click(function () {
     var content1 = $.trim($("#textarea9am").val())
     localStorage.setItem("content9am", JSON.stringify(content1));
@@ -41,7 +44,7 @@ $("#saveBtn5pm").click(function () {
     localStorage.setItem("content5pm", JSON.stringify(content9));
 });
 
-
+// Get each task from local storage
 $("#textarea9am").val(JSON.parse(localStorage.getItem("content9am")));
 $("#textarea10am").val(JSON.parse(localStorage.getItem("content10am")));
 $("#textarea11am").val(JSON.parse(localStorage.getItem("content11am")));
@@ -52,9 +55,10 @@ $("#textarea3pm").val(JSON.parse(localStorage.getItem("content3pm")));
 $("#textarea4pm").val(JSON.parse(localStorage.getItem("content4pm")));
 $("#textarea5pm").val(JSON.parse(localStorage.getItem("content5pm")));
 
-var displayTime = moment().format("LT");
+// Current time
 var currentTime = moment().hours();
 
+// Color code each time slot based off of the time of day
 timeslot9am = new Date();
 timeslot9am.setHours(9, 0, 0)
 $("#9am").text(moment(timeslot9am).format("LT"))
