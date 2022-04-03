@@ -22,7 +22,13 @@ If the user clicks the "Clear All Tasks" button then the page is refreshed and a
 
 ## Screenshots of Deployed Application
 
-![first prompt asking for password length](./assets/images/passwordLength.png)
+## Header
+![overview of entire application](./assets/images/overview.png)
+
+## Task Saving Preview
+![saving first task](./assets/images/saved-task1.png)
+![saving second task](./assets/images/saved-task2.png)
+![screen after unsaved tasks are cleared](./assets/images/clear-unsaved.png)
 
 ## URL for Deployed Application
 
