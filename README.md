@@ -32,4 +32,4 @@ If the user clicks the "Clear All Tasks" button then the page is refreshed and a
 
 ## URL for Deployed Application
 
-https://randronaco1027.github.io/quiz-assignment/ 
+https://randronaco1027.github.io/work-day-scheduler/ 
